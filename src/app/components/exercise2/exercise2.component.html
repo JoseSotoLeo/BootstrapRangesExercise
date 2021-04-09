@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-md-center align-items-center mt-5">
+        <div class="col col-lg-2 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Min val</span>
+                <input type="number" aria-describedby="basic-addon1" class="form-control" [ngModel]="minVal" disabled>
+            </div>
+        </div>
+        <div class="col-6">   
+            <app-ngc-range 
+            [options]="options"
+            (changeValues)="updateValues($event)"
+            ></app-ngc-range>
+        </div>
+        <div class="col col-lg-2 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon2">Max val</span>
+                <input type="number" aria-describedby="basic-addon2" class="form-control" [ngModel]="maxVal" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="card border-0 container align-items-center">
+        <div class="card-body mt-3">
+          <h5 class="text-center">Features here:</h5>
+          <p class="text-center">Inputs and Outputs to pass data values.</p>
+          <p class="text-center">Databinding to refresh displayed data.</p>
+          <p class="text-center">Steps received by http call.</p>
+        </div>
+    </div>
+</div>

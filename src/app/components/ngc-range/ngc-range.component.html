@@ -1,0 +1,14 @@
+<!-- <p>Min value: <input type="number" [(ngModel)]="min"></p>
+<p>Max value: <input type="number" [(ngModel)]="max"></p> -->
+<ngx-slider *ngIf="min || max else exercise2"
+    [(value)]="min" 
+    [(highValue)]="max" 
+    [options]="options"
+    (userChange)="onChange($event)"></ngx-slider>
+
+<ng-template #exercise2>
+    <ngx-slider *ngIf="options.stepsArray && options.stepsArray.length > 1"
+        [options]="options"
+        [highValue]="options.stepsArray[options.stepsArray.length-1].value"
+        (userChange)="onChange($event)"></ngx-slider>
+</ng-template>
